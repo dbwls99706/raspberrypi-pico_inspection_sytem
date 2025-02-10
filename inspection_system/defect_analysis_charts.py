@@ -17,7 +17,6 @@ def fetch_data():
     df = pd.read_sql(query, conn)
     conn.close()
 
-    
     df["datetime"] = pd.to_datetime(df["datetime"]).dt.strftime("%m/%d %H")
 
     return df
